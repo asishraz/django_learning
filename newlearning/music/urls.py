@@ -1,10 +1,11 @@
-from django.conf.urls import url, include
-# from django.http import HttpResponse
-
+from django.conf.urls import url
 from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.index, name="index"),
-]
+    #/music/
+    url(r'^$', views.index,name='index'),
 
+    #/music/album_id
+    url(r'^(?P<album_id>[0-9]+)$', views.detail, name="detail"),
+]
